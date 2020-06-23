@@ -5,7 +5,7 @@
     <ul v-else>
       <li v-for="post of posts.items" :key="post.id" class="pb-4">
         <n-link
-          :to="`/${post.id}`"
+          :to="`/${post.meta.slug}`"
           class="text-5xl avenir font-bold leading-none text-gray-800 pb-6"
         >{{ post.title }}</n-link>
         <p class="date pt-0 pb-4 athelas font-light text-red-400">{{ post.date|datify }}</p>

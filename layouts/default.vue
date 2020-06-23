@@ -4,7 +4,7 @@
       <h4 class="text-xl avenir font-normal">
         <a href="/" class="no-underline">tomd.org</a>
         <span class="text-gray-600">~</span>
-        <a href="/about/" class="no-underline">about</a>
+        <a href="/about" class="no-underline">about</a>
       </h4>
     </header>
     <Nuxt />
