@@ -12,4 +12,9 @@
 </template>
 
 <style>
+.avenir {
+  font-family: "avenir next", avenir, -apple-system, BlinkMacSystemFont,
+    "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
+}
 </style>
