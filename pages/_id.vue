@@ -1,8 +1,12 @@
 <template>
-  <div class="container sm:px-16 px-6 pt-8 max-w-3xl">
-    <div v-if="$fetchState.pending">Fetching post #{{$route.params.id}}...</div>
+  <div class="container sm:px-16 px-6 pt-8 max-w-5xl">
+    <div v-if="$fetchState.pending">
+      Fetching post #{{ $route.params.id }}...
+    </div>
     <div v-else>
-      <h1 class="text-5xl avenir font-bold leading-none text-gray-800 pb-6">{{ item.title }}</h1>
+      <h1 class="text-5xl avenir font-bold leading-none text-gray-800 pb-6">
+        {{ item.title }}
+      </h1>
 
       <span v-for="block in item.body" :key="block.id" id="streamfield">
         <div v-if="block.type == 'heading'">
@@ -15,12 +19,13 @@
         <div v-else-if="block.type == 'image'">
           <img
             :src="block.value.medium.src"
-            :width="block.value.medium.width"
-            :height="block.value.medium.height"
+            :width="block.value.medium.width / 2"
+            :height="block.value.medium.height / 2"
             class="my-2 rounded"
           />
         </div>
       </span>
+      <p class="athelas text-xl py-4 text-gray-600">{{ item.date }}</p>
     </div>
   </div>
 </template>
