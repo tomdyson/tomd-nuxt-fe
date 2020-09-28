@@ -18,7 +18,7 @@
 export default {
   data() {
     return {
-      posts: []
+      posts: [],
     };
   },
   head() {
@@ -28,25 +28,25 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "Tom's blog"
-        }
-      ]
+          content: "Tom Dyson's blog",
+        },
+      ],
     };
   },
   async fetch() {
     this.posts = await this.$axios.$get(
-      "https://tomd-wagtail.herokuapp.com/api/v2/pages/?type=blog.BlogPage&fields=title,date"
+      `${process.env.baseApiUrl}/pages/?type=blog.BlogPage&fields=title,date`
     );
   },
   filters: {
-    datify: function(value) {
+    datify: function (value) {
       if (value && value.length) {
         var d = new Date(Date.parse(value));
         var options = { year: "numeric", month: "long", day: "numeric" };
         return d.toLocaleDateString("en-us", options);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -66,5 +66,8 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+  env: {
+    baseApiUrl: process.env.BASE_API_URL || 'https://tomd-wagtail.herokuapp.com/api/v2'
   }
 }

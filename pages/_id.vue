@@ -29,7 +29,7 @@
 export default {
   data() {
     return {
-      item: {}
+      item: {},
     };
   },
   head() {
@@ -39,16 +39,16 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "Something here"
-        }
-      ]
+          content: "Something here",
+        },
+      ],
     };
   },
   async fetch() {
     this.item = await this.$axios.$get(
-      `https://tomd-wagtail.herokuapp.com/api/v2/pages/${this.$route.params.id}/`
+      `${process.env.baseApiUrl}/pages/${this.$route.params.id}/`
     );
-  }
+  },
 };
 </script>
 
