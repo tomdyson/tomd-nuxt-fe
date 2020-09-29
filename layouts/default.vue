@@ -1,12 +1,12 @@
 <template>
   <div>
     <header
-      class="sm:px-16 px-4 pt-8 pb-6 border-b border-gray-200 border-opacity-75"
+      class="sm:px-16 px-6 pt-8 pb-6 border-b border-gray-200 border-opacity-75"
     >
       <h4 class="text-xl avenir font-normal">
         <n-link to="/" class="no-underline">tomd.org</n-link>
         <span class="text-gray-600">~</span>
-        <n-link to="/about" class="no-underline">about</n-link>
+        <n-link to="/about" class="no-underline text-gray-600">about</n-link>
       </h4>
     </header>
     <Nuxt />
