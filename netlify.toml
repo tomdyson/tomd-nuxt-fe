@@ -1,0 +1,5 @@
+[build]
+  publish = "dist/"
+  command = "yarn build\
+    && yarn export\
+    && wget -O dist/_redirects https://tomd-wagtail.herokuapp.com/netlify/redirects"
