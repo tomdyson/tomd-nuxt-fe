@@ -85,6 +85,9 @@ export default {
 .copy p {
   @apply mt-5;
 }
+.copy p a {
+  @apply bg-teal-100;
+}
 .avenir {
   font-family: "avenir next", avenir, -apple-system, BlinkMacSystemFont,
     "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
