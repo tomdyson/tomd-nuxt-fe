@@ -2,6 +2,16 @@
 
 Built in Nuxt, using static site generation, hosted on Netlify. The backend is Wagtail, at https://github.com/tomdyson/tomd.
 
+The same site is hosted twice: one in SSG mode, for production, and the other in SPA mode, for previews. They are built with slightly different commands:
+
+### SSG site
+
+`yarn build && yarn export && wget -O dist/_redirects https://tomd-wagtail.herokuapp.com/netlify/redirects`
+
+### SPA site
+
+`yarn build-spa && yarn export && mv spa_redirects dist/_redirects`
+
 ## Build Setup
 
 ```bash
@@ -22,7 +32,7 @@ $ yarn generate
 ## Todo
 - [x] Support embeds
 - [x] Download Source Serif Pro, which now has italics.
-- [ ] Headless preview
+- [x] Headless preview
 - [ ] Responsive embeds
 - [ ] Twitter cards
 - [ ] Optional image captions
