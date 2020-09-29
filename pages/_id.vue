@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import utils from "./lib";
+import utils from "../components/lib";
 
 export default {
   data() {
@@ -57,9 +57,15 @@ export default {
     };
   },
   async fetch() {
-    this.item = await this.$axios.$get(
-      `${process.env.baseApiUrl}/pages/${this.$route.params.id}/`
-    );
+    if (typeof this.$route.query.token !== "undefined") {
+      this.item = await this.$axios.$get(
+        `${process.env.baseApiUrl}/page_preview/1/?content_type=blog.blogpage&token=${this.$route.query.token}&format=json`
+      );
+    } else {
+      this.item = await this.$axios.$get(
+        `${process.env.baseApiUrl}/pages/${this.$route.params.id}/`
+      );
+    }
   },
   filters: {
     datify: utils.datify,

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import utils from "./lib";
+import utils from "../components/lib";
 
 export default {
   data() {
