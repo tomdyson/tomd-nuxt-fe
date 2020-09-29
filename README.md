@@ -1,4 +1,6 @@
-# tomd-nuxt-fe
+# tomd.org frontend
+
+Built in Nuxt, using static site generation, hosted on Netlify. The backend is Wagtail, at https://github.com/tomdyson/tomd.
 
 ## Build Setup
 
@@ -19,5 +21,8 @@ $ yarn generate
 
 ## Todo
 - [x] Support embeds
-- [ ] Download Source Serif Pro, which now has italics.
-    - https://github.com/adobe-fonts/source-serif-pro
+- [x] Download Source Serif Pro, which now has italics.
+- [ ] Headless preview
+- [ ] Responsive embeds
+- [ ] Twitter cards
+- [ ] Optional image captions
