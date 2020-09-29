@@ -28,16 +28,20 @@
           <div class="my-2" v-html="block.value.html" />
         </div>
       </span>
-      <p class="athelas text-xl py-4 text-gray-600">{{ item.date }}</p>
+      <p class="athelas text-xl py-4 text-gray-600">
+        {{ item.date | datify }}
+      </p>
     </div>
   </div>
 </template>
 
 <script>
+import utils from "./lib";
+
 export default {
   data() {
     return {
-      item: {},
+      item: { meta: {} },
     };
   },
   head() {
@@ -47,7 +51,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "Something here",
+          content: this.item.meta.search_description,
         },
       ],
     };
@@ -56,6 +60,9 @@ export default {
     this.item = await this.$axios.$get(
       `${process.env.baseApiUrl}/pages/${this.$route.params.id}/`
     );
+  },
+  filters: {
+    datify: utils.datify,
   },
 };
 </script>

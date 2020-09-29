@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import utils from "./lib";
+
 export default {
   data() {
     return {
@@ -44,13 +46,7 @@ export default {
     );
   },
   filters: {
-    datify: function (value) {
-      if (value && value.length) {
-        var d = new Date(Date.parse(value));
-        var options = { year: "numeric", month: "long", day: "numeric" };
-        return d.toLocaleDateString("en-us", options);
-      }
-    },
+    datify: utils.datify,
   },
 };
 </script>
