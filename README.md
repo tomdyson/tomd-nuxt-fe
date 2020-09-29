@@ -17,4 +17,7 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Todo
+- [x] Support embeds
+- [ ] Download Source Serif Pro, which now has italics.
+    - https://github.com/adobe-fonts/source-serif-pro

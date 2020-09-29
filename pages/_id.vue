@@ -24,6 +24,9 @@
             class="my-2 rounded"
           />
         </div>
+        <div v-else-if="block.type == 'embed'">
+          <div class="my-2" v-html="block.value.html" />
+        </div>
       </span>
       <p class="athelas text-xl py-4 text-gray-600">{{ item.date }}</p>
     </div>
