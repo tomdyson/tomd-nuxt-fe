@@ -14,7 +14,9 @@
         </div>
 
         <div v-else-if="block.type == 'paragraph'">
-          <p class="copy" v-html="block.value" />
+          <!-- v-interpolation converts internal links to nuxt links -->
+          <!-- see https://dev.to/wearethreebears/handle-api-driven-content-links-in-nuxt-js-3afj -->
+          <p class="copy" v-interpolation v-html="block.value" />
         </div>
         <div v-else-if="block.type == 'image'">
           <img
@@ -62,8 +64,17 @@ export default {
         `${process.env.baseApiUrl}/page_preview/1/?content_type=blog.blogpage&token=${this.$route.query.token}&format=json`
       );
     } else {
+      // flatten paths deeper than the root
+      // 1. remove leading and trailing slashes
+      var slug = this.$route.path.replace(/^\/|\/$/g, "");
+      var slug_parts = slug.split("/");
+      // 2. if the requested path is deeper than the root,
+      // ignore everything up to the last part
+      if (slug_parts.length > 1) {
+        slug = slug_parts[slug_parts.length - 1];
+      }
       this.item = await this.$axios.$get(
-        `${process.env.baseApiUrl}/pages/${this.$route.params.id}/`
+        `${process.env.baseApiUrl}/pages/${slug}/`
       );
     }
   },

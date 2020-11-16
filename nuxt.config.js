@@ -54,6 +54,9 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    // Convert internal links to nuxt links
+    // https://dev.to/wearethreebears/handle-api-driven-content-links-in-nuxt-js-3afj
+    'nuxt-interpolation',
   ],
   /*
   ** Axios module configuration
