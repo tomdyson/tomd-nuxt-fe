@@ -1,5 +1,5 @@
 <template>
-  <div class="container sm:px-16 px-6 pt-8 max-w-5xl">
+  <main class="container sm:px-16 px-6 pt-8 max-w-5xl">
     <div v-if="$fetchState.pending">
       Fetching post #{{ $route.params.id }}...
     </div>
@@ -16,7 +16,7 @@
         <div v-else-if="block.type == 'paragraph'">
           <!-- v-interpolation converts internal links to nuxt links -->
           <!-- see https://dev.to/wearethreebears/handle-api-driven-content-links-in-nuxt-js-3afj -->
-          <p class="copy" v-interpolation v-html="block.value" />
+          <div class="copy" v-interpolation v-html="block.value" />
         </div>
         <div v-else-if="block.type == 'image'">
           <img
@@ -34,7 +34,7 @@
         {{ item.date | datify }}
       </p>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -60,7 +60,7 @@ export default {
   },
   async fetch() {
     if (typeof this.$route.query.token !== "undefined") {
-      this.item = await this.$axios.$get(
+      this.item = await this.$http.$get(
         `${process.env.baseApiUrl}/page_preview/1/?content_type=blog.blogpage&token=${this.$route.query.token}&format=json`
       );
     } else {
@@ -73,7 +73,7 @@ export default {
       if (slug_parts.length > 1) {
         slug = slug_parts[slug_parts.length - 1];
       }
-      this.item = await this.$axios.$get(
+      this.item = await this.$http.$get(
         `${process.env.baseApiUrl}/pages/${slug}/`
       );
     }
