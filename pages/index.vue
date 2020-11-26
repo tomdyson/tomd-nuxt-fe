@@ -41,7 +41,7 @@ export default {
     };
   },
   async fetch() {
-    this.posts = await this.$axios.$get(
+    this.posts = await this.$http.$get(
       `${process.env.baseApiUrl}/pages/?type=blog.BlogPage&fields=title,date&show_in_menus=true`
     );
   },

@@ -4,7 +4,7 @@ export default {
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-  mode: 'universal',
+  // mode: 'universal',
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -52,11 +52,10 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     // Convert internal links to nuxt links
     // https://dev.to/wearethreebears/handle-api-driven-content-links-in-nuxt-js-3afj
     'nuxt-interpolation',
+    '@nuxt/http',
   ],
   /*
   ** Axios module configuration
