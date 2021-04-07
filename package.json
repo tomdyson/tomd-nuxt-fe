@@ -11,9 +11,9 @@
     "serve": "nuxt serve"
   },
   "dependencies": {
-    "@nuxt/http": "^0.6.0",
-    "nuxt": "^2.14.7",
-    "nuxt-interpolation": "^0.2.2",
+    "@nuxt/http": "^0.6.1",
+    "nuxt": "^2.14.12",
+    "nuxt-interpolation": "^0.2.3",
     "webpack": "^4.0.0"
   },
   "devDependencies": {
