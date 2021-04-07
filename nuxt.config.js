@@ -1,4 +1,3 @@
-
 export default {
   /*
   ** Nuxt rendering mode
@@ -9,44 +8,38 @@ export default {
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
-  target: 'static',
+  target: "static",
   /*
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.npm_package_name || "",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content: process.env.npm_package_description || "",
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
     ],
-    script: [
-      {
-        src: 'https://static.cloudflareinsights.com/beacon.min.js',
-        body: true,
-        defer: true,
-        'data-cf-beacon': '{"token": "7c9d8764e8c84b2889328ea3d45536f7"}'
-      }
-    ]
   },
   /*
   ** Global CSS
   */
-  css: [
-  ],
+  css: [],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [
-  ],
+  plugins: [],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
@@ -57,7 +50,7 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss',
+    "@nuxtjs/tailwindcss",
   ],
   /*
   ** Nuxt.js modules
@@ -65,8 +58,8 @@ export default {
   modules: [
     // Convert internal links to nuxt links
     // https://dev.to/wearethreebears/handle-api-driven-content-links-in-nuxt-js-3afj
-    'nuxt-interpolation',
-    '@nuxt/http',
+    "nuxt-interpolation",
+    "@nuxt/http",
   ],
   /*
   ** Axios module configuration
@@ -77,9 +70,9 @@ export default {
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
-  build: {
-  },
+  build: {},
   env: {
-    baseApiUrl: process.env.BASE_API_URL || 'https://tomd-wagtail.herokuapp.com/api/v2'
-  }
-}
+    baseApiUrl: process.env.BASE_API_URL ||
+      "https://tomd-wagtail.herokuapp.com/api/v2",
+  },
+};
