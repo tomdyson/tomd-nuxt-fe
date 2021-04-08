@@ -6,11 +6,11 @@ The same site is hosted twice: one in SSG mode, for production, and the other in
 
 ### SSG site
 
-`yarn build && yarn export && wget -O dist/_redirects https://tomd-wagtail.herokuapp.com/netlify/redirects && cat prod_redirects >> dist/_redirects`
+`yarn generate && wget -O dist/_redirects https://tomd-wagtail.herokuapp.com/netlify/redirects && cat prod_redirects >> dist/_redirects`
 
 ### SPA site
 
-`yarn build-spa && yarn export && mv spa_redirects dist/_redirects`
+`yarn generate-spa && mv spa_redirects dist/_redirects`
 
 ## Build Setup
 
