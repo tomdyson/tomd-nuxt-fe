@@ -74,6 +74,6 @@ export default {
   build: {},
   env: {
     baseApiUrl: process.env.BASE_API_URL ||
-      "https://tomd-wagtail.herokuapp.com/api/v2",
+      "https://wagtail-tomd.fly.dev/api/v2",
   },
 };
