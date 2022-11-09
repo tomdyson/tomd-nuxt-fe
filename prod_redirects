@@ -1,2 +1,3 @@
 /x/*    https://tom.s3.amazonaws.com/share/:splat   301
 /trees/*    https://m8dcwxq78f.execute-api.eu-west-1.amazonaws.com/api/:splat   200
+/.well-known/webfinger/*  https://mastodon.social/.well-known/webfinger?resource=acct:tomdyson@mastodon.social 200
