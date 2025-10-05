@@ -31,6 +31,13 @@ export default {
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
     ],
+    script: [
+      {
+        src: "https://umami.co.tomd.org/script.js",
+        defer: true,
+        "data-website-id": "b05b00e9-e212-4a7d-9ca1-9610308b22fa"
+      }
+    ]
   },
   /*
   ** Global CSS
